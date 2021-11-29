@@ -1,9 +1,12 @@
 buildscript {
 	repositories {
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
     }
 
     dependencies {
@@ -28,13 +31,16 @@ allprojects {
     apply plugin: 'eclipse'
 
     repositories {
+
         mavenCentral()
 
         // oss-candidate for -rc.* verions:
-        maven {
-            url "https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates"
-        }
-
+//        maven {
+//            url "https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates"
+//        }
+//        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         /**
          * This repository locates artifacts that don't exist in maven central but we had to backup from jcenter
          * The exclusiveContent
